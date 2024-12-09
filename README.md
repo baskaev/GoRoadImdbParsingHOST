@@ -9,3 +9,5 @@ you can run a docker container and have fun too, docker run -p 7317:7317 ghcr.io
 and inside docker containers there is a problems with MustElement function, on host it works so you can use it
 if you start a main.go app on your host.
 
+https://go-rod.github.io/#/custom-launch?id=remotely-manage-the-launcher
+https://github.com/go-rod/rod/pkgs/container/rod/versions?filters%5Bversion_type%5D=tagged
