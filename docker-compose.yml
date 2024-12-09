@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   rod-manager:
-    image: ghcr.io/go-rod/rod
+    image: ghcr.io/go-rod/rod:v0.114.8
     container_name: rod-manager
     ports:
       - "7317:7317"
