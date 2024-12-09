@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  rod-manager:
+    image: ghcr.io/go-rod/rod
+    container_name: rod-manager
+    ports:
+      - "7317:7317"
+    #environment:
+      # Добавьте переменные окружения, если нужно
+
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rod-scraper
+    depends_on:
+      - rod-manager
+    environment:
+      ROD_REMOTE: "ws://rod-manager:7317" # Адрес Rod Manager для подключения
+    ports:
+      - "8082:8080" # Порт для вашего Go-приложения
+    links:
+      - rod-manager
